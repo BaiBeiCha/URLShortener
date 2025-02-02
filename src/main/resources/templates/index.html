@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сократитель URL</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<div class="container">
+    <h1>Сократите вашу ссылку</h1>
+
+    <form th:action="@{/}" method="post">
+        <div class="form-group">
+            <input type="text"
+                   id="originalUrl"
+                   name="rawUrl"
+                   th:value="${url}"
+                   placeholder="Введите вашу длинную ссылку здесь..."
+                   required>
+        </div>
+        <button type="submit">Сократить</button>
+    </form>
+
+    <div id="result" th:if="${shorter != null}">
+        Ваша короткая ссылка:
+        <a th:href="${shorter}" th:text="${shorter}" class="short-url" target="_blank"></a>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: URLShorter
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/urlshorterdb?createDatabaseIfNotExist=true
+    username: root
+    password: Kostya757GKostya757G
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  mvc:
+    hidden method:
+      filter:
+        enabled: true
